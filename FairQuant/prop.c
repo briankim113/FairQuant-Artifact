@@ -1,7 +1,6 @@
 #include <fenv.h>   //fesetround
 #include <string.h> //memset, memcpy
 #include "prop.h"
-#include "gurobi_c.h"
 
 // following are helper functions from ReluDiff for forward prop
 void affineTransform(struct Interval *interval, struct Matrix *posMatrix, struct Matrix *negMatrix,
