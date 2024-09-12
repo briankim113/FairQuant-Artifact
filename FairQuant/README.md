@@ -2,13 +2,12 @@
 
 ## Installation
 
-For installation, please refer to the [installation file](./INSTALL.md) for detailed instructions.
+For installation, please refer to the [installation file](./INSTALL.md) for detailed instructions. Ensure that you have `make` and `gcc` installed on your machine.
 
 
 ## Run the tool
 
-Before running our tool, ensure that you have `make` and `gcc` installed on your machine.
-Also, ensure that OpenBLAS has been installed correctly. You can do this by running
+Before running our tool, ensure that OpenBLAS has been installed correctly. You can do this by running:
 
 ```shell
 export INSTALL_PREFIX=$HOME/OpenBLAS # or wherever you installed OpenBLAS
