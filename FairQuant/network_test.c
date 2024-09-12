@@ -400,13 +400,13 @@ int main( int argc, char *argv[])
 
     // create a file
     char *filename = strrchr(FULL_NET_PATH, '/') + 1; // e.g., points to 'm' in model.nnet
-    char filenameWithoutExt[256];
-    int filenameWithoutExtLen = strchr(filename, '.') - filename; // counts the number of characters between start and '.'
-    strncpy(filenameWithoutExt, filename, filenameWithoutExtLen); // copy the name
-    filenameWithoutExt[filenameWithoutExtLen] = '\0'; // null-terminate
-
-    char filePath[256];
-    snprintf(filePath, sizeof(filePath), "res/%s-%d.txt", filenameWithoutExt, SENS_FEATURE_IDX);
+    char filenameWithoutExt[32]; // Assuming the filename without extension is short enough
+    snprintf(filenameWithoutExt, sizeof(filenameWithoutExt), "%.*s", 
+             (int)(strchr(filename, '.') - filename), filename);
+    
+    char filePath[64];
+    snprintf(filePath, sizeof(filePath), "res/%s-%d.txt", 
+             filenameWithoutExt, SENS_FEATURE_IDX);
 
     FILE *file = fopen(filePath, "w");
     if (file == NULL) {
