@@ -399,9 +399,11 @@ int main( int argc, char *argv[])
     fprintf(stdout, "%s", buffer2);
 
     // create a file
-    char *filename = strrchr(FULL_NET_PATH, '/') + 1;
+    char *filename = strrchr(FULL_NET_PATH, '/') + 1; // e.g., points to 'm' in model.nnet
     char filenameWithoutExt[256];
-    strncpy(filenameWithoutExt, filename, strchr(filename, '.') - filename);
+    int filenameWithoutExtLen = strchr(filename, '.') - filename; // counts the number of characters between start and '.'
+    strncpy(filenameWithoutExt, filename, filenameWithoutExtLen); // copy the name
+    filenameWithoutExt[filenameWithoutExtLen] = '\0'; // null-terminate
 
     char filePath[256];
     snprintf(filePath, sizeof(filePath), "res/%s-%d.txt", filenameWithoutExt, SENS_FEATURE_IDX);
