@@ -9,10 +9,11 @@ For installation, please refer to the [installation file](./INSTALL.md) for deta
 
 Before running our tool, ensure that you have `make` and `gcc` installed on your machine.
 Also, ensure that OpenBLAS has been installed correctly. You can do this by running
-```
-export INSTALL_PREFIX=$HOME/OpenBLAS // or wherever you installed OpenBLAS
-ls $INSTALL_PREFIX/bin // you should see files such as cblas.h
-ls $INSTALL_PREFIX/lib // you should see files such as libopenblas.so
+
+```shell
+export INSTALL_PREFIX=$HOME/OpenBLAS # or wherever you installed OpenBLAS
+ls $INSTALL_PREFIX/bin # you should see files such as cblas.h
+ls $INSTALL_PREFIX/lib # you should see files such as libopenblas.so
 ```
 
 Our tool can be easily run by following the steps listed below.
