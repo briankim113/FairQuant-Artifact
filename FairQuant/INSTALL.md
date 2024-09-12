@@ -1,17 +1,21 @@
 # FairQuant Installation
 
-Our tool is tested on Ubuntu 16.04. The only additional installation needed is for OpenBLAS library.
+The only additional installation is for [OpenBLAS](http://www.openblas.net).
+You can download the library by following the [OpenBLAS's Installation Guide](https://github.com/OpenMathLib/OpenBLAS/wiki/Installation-Guide) or running the following commands:
 
-You can follow the [OpenBLAS's Installation Guide](https://github.com/OpenMathLib/OpenBLAS/wiki/Installation-Guide) or run the following commands:
+```shell
+# Download the tar file
+wget https://github.com/OpenMathLib/OpenBLAS/releases/download/v0.3.6/OpenBLAS-0.3.6.tar.gz
+tar -xzf OpenBLAS-0.3.6.tar.gz
 
-```
-wget https://github.com/xianyi/OpenBLAS/archive/v0.3.6.tar.gz
-tar -xzf v0.3.6.tar.gz
+# Set up installation path
+export INSTALL_PREFIX=$HOME/OpenBLAS # or wherever you want to install OpenBLAS
+mkdir $INSTALL_PREFIX
+
+# Install
 cd OpenBLAS-0.3.6
 make
-export INSTALL_PREFIX=$HOME/OpenBLAS
-mkdir $INSTALL_PREFIX
 make PREFIX=$INSTALL_PREFIX install
 ```
 
-Note that the same INSTALL_PREFIX should be used in the makefile.
+Once you check that OpenBLAS has been successfully installed in `$INSTALL_PREFIX`, you can remove the tar file and the OpenBLAS-0.3.6 folder.
